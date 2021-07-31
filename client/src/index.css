@@ -1,0 +1,146 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --max-width: 1170px;
+  --primary-clr: #201772;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 3rem;
+}
+
+/* GLOBALS */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.page {
+  margin-top: 2rem;
+}
+
+/* NAV */
+.nav {
+  position: fixed;
+  height: 3rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #101010;
+}
+
+.nav__center {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0.5rem 1rem;
+}
+
+.nav__center--logo {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-style: italic;
+  color: var(--primary-clr);
+  font-size: 1.4rem;
+}
+
+.nav__center--links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav__center--links li {
+  margin-right: 16px;
+}
+
+.nav__center--links-selected {
+  font-weight: bold;
+}
+
+/* AUTH CARD */
+.auth-card {
+  width: 26rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  border: 1px solid #ccc;
+}
+
+.auth-card__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card__form--control {
+  height: 2rem;
+  padding: 0.4rem 0.6rem;
+  margin: 0 0.2rem;
+  outline: none;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.auth-card__button {
+  border-radius: 10px;
+  padding: 0.5rem 1.3rem;
+  color: #fff;
+  background-color: var(--primary-clr);
+  margin-top: 0.3rem;
+  cursor: pointer;
+}
+
+/* HOME PAGE */
+.home-page {
+  width: var(--max-width);
+  max-width: 90vw;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* SINGLE POST */
+.single-post {
+  border: 1px solid var(--primary-clr);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.single-post__btns {
+  display: flex;
+  width: 100%;
+  margin: 0.4rem 0;
+}
+
+.like-btn svg {
+  font-size: 1.2rem;
+  border-color: #101010;
+}

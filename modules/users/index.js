@@ -137,10 +137,3 @@ const resolvers = {
 };
 
 module.exports = { typeDefs, resolvers };
-
-// module.exports = createModule({
-//   id: 'users',
-//   dirname: __dirname,
-//   typeDefs: [typeDefs],
-//   resolvers,
-// });

@@ -20,15 +20,15 @@ const typeDefs = gql`
     _id: ID!
     user: String!
     body: String!
-    createdAt: String!
-    updatedAt: String!
+    createdAt: String
+    updatedAt: String
   }
 
   type Like {
     _id: ID!
     user: String!
-    createdAt: String!
-    updatedAt: String!
+    createdAt: String
+    updatedAt: String
   }
 
   type Query {
@@ -39,7 +39,8 @@ const typeDefs = gql`
   type Mutation {
     createPost(body: String!): Post!
     deletePost(postId: ID!): String!
-    likePost(userId: ID!): Post!
+    likePost(postId: ID!): Post!
+    commentPost(postId: ID!, commentBody: String!): Post!
   }
 
   type Subscription {
@@ -81,10 +82,6 @@ const resolvers = {
         });
 
         const post = await newPost.save();
-
-        const user = await User.findById(id);
-        user.posts.push(post._id);
-        await user.save();
 
         // context.pubsub.publish('NEW_POST', { newPost: post });
         return post;
@@ -131,6 +128,16 @@ const resolvers = {
         console.log(error);
       }
     },
+    async commentPost(_, { postId, commentBody }, context) {
+      const { id } = checkAuth(context);
+      const post = await Post.findById(postId);
+      if (!post) throw new Error(`Post not found`);
+
+      post.comments.push({ user: id, body: commentBody });
+      await post.save();
+
+      return post;
+    },
   },
   Subscription: {
     newPost: {
@@ -140,10 +147,3 @@ const resolvers = {
 };
 
 module.exports = { typeDefs, resolvers };
-
-// module.exports = createModule({
-//   id: 'posts',
-//   dirname: __dirname,
-//   typeDefs: [typeDefs],
-//   resolvers,
-// });
