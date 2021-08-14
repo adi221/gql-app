@@ -1,0 +1,59 @@
+{
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+
+  "todohighlight.isCaseSensitive": true,
+  "todohighlight.keywords": [
+    {
+      "text": "NOTE:",
+      "color": "#333",
+      "backgroundColor": "#e67e22"
+    },
+    {
+      "text": "FIX:",
+      "color": "#333",
+      "backgroundColor": "#318EFD"
+    }
+  ],
+
+  "eslint.workingDirectories": ["./backend", "./frontend"],
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "typescriptreact"
+  ],
+
+  "autoprefixer.options": {
+    "browsers": ["last 4 versions", "ie >= 9", "> 5%"]
+  },
+  "php.validate.executablePath": "C:\\php\\php.exe",
+  "tabnine.experimentalAutoImports": true,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.semi": true,
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  // "workbench.editorAssociations": {
+  //   "*.ipynb": "jupyter.notebook.ipynb"
+  // },
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single"
+  // "terminal.integrated.shellArgs.windows": ["-ExecutionPolicy", "Bypass"]
+}
